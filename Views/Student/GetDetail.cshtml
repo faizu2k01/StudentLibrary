@@ -1,0 +1,28 @@
+﻿@model Student
+
+
+<form method="post" asp-action="Update" asp-controller="Student">
+<div class="container">
+        
+        <input asp-for="Id" type="number" hidden/>
+        <div class="row">
+            <lable class="form-label">Name</lable>
+            <input asp-for="Name" type="text" class="form-control"/>
+        </div>
+        <div class="row">
+            <lable class="form-label">Email</lable>
+            <input asp-for="Email"  type="text" class="form-control" />
+        </div>
+        <div class="row">
+            <lable class="form-label">Mobile</lable>
+            <input asp-for="Mobile"  type="text" class="form-control" />
+        </div>
+        <div class="row">
+            <div class="btn-group form-control">
+                <button class="btn btn-outline-primary rounded" type="submit">Edit</button>
+                <a class="btn btn-outline-warning rounded" asp-action="Remove" asp-controller="Student" asp-route-id="@Model.Id">Delete</a>
+
+            </div>
+        </div>
+</div>
+ </form>

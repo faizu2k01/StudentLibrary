@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Student>
+
+
+<div class="container p-5">
+    <div class="row p-5">
+        <div class="col-12">
+            <table class="table table-bordered table-hover rounded">
+                <thead>
+                    <tr class="bg-dark">
+                        <td class="text-white">Name</td>
+                    
+                    
+                        <td class="text-white">Email</td>
+                    
+                  
+                        <td class="text-white">
+                            Mobile
+                        </td>
+                        <td class="text-white text-center">
+                            Action
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Email
+                            </td>
+                            <td>
+                                @item.Mobile
+                            </td>
+                            <td class="text-center">
+                                <a class="btn btn-outline-warning" asp-route-id="@item.Id" asp-action="GetDetail" asp-controller="Student">Edit</a>
+                                <button class="btn btn-outline-info" asp-route-id="@item.Id" asp-action="Remove" asp-controller="Student">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
